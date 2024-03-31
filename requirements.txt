@@ -1,0 +1,6 @@
+numpy
+nltk
+torch
+torchdata
+torchtext
+Flask
