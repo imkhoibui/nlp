@@ -5,7 +5,7 @@ class ClassificationModel(nn.Module):
         super(ClassificationModel, self).__init__()
 
         self.num_classes = num_classes
-
+        self.conv
         
 
     def forward(self):

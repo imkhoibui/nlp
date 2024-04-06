@@ -3,7 +3,7 @@ import re
 
 from torch.utils.data.dataset import Dataset
 
-from utils import tokenizer, read_file
+from utils import read_file, split_line
 
 class TextDataset(Dataset):
     def __init__(self, data_file, transform: None):
@@ -20,8 +20,8 @@ class TextDataset(Dataset):
     
     def __getitem__(self, index):
         sentence = self.data_file[index]
-        sentence = sentence.split("\t")
-        return tokenizer(sentence[1]), sentence[0]
+        feature, target = split_line(sentence)
+        return feature, target
     
     def num_classes(self):
         return 2

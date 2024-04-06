@@ -9,8 +9,8 @@ from torch.utils.data import DataLoader
 from prepare_data import TextDataset, collater
 
 def get_dataset():
-    train_data = TextDataset(config.TRAIN_DIR)
-    dev_data = TextDataset(config.DEV_DIR)
+    train_data = TextDataset(config.TRAIN_DIR, transform=None)
+    dev_data = TextDataset(config.DEV_DIR, transform=None)
     return train_data, dev_data
 
 def train():
