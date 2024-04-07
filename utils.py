@@ -17,7 +17,8 @@ def load_glove():
     with open(os.path.join(os.path.dirname(os.path.realpath(__file__)), "data/glove.6B.50d-relativized.txt")) as file:
         for line in file:
             l = line.split()
-            word_2_vec[l[0]] = l[1:]
+            word_embedding = np.array(l[1:], dtype=np.float32)
+            word_2_vec[l[0]] = word_embedding
 
     print("Finish loading GloVe")
     return word_2_vec
@@ -51,6 +52,7 @@ def split_line(sentence):
     line = sentence.split("\t")
     targets = line[0]
     features = tokenizer(line[1])
+    
     return features, targets
 
 def clean_sentence(sentence):

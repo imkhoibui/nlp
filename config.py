@@ -1,4 +1,4 @@
-EPOCHS = 5
+EPOCHS = 10
 BATCH_SIZE = 32
 
 TRAIN_DIR = 'data/train.txt'
